@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Service Status</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #0d1117; color: #c9d1d9; padding: 20px; }
+        .status-table { width: 100%; max-width: 800px; margin: 20px auto; border-collapse: collapse; }
+        .status-table th, .status-table td { border: 1px solid #30363d; padding: 12px; text-align: left; }
+        .status-table th { background: #161b22; }
+        .status-ok { color: #3fb950; }
+        .status-error { color: #f85149; }
+        .status-warning { color: #d29922; }
+        .status-table td[onclick] { cursor: pointer; }
+        .status-table td[onclick]:hover { background: #0f1620; }
+        .hint { font-size: 0.7em; color: #8b949e; text-align: center; margin-top: 30px; }
+        .details { display: none; background: #161b22; padding: 10px; margin-top: 5px; border-left: 3px solid #d29922; }
+        .details_ok { display: none; background: #161b22; padding: 10px; margin-top: 5px; border-left: 3px solid #22d23a; }
+        .details_down { display: none; background: #161b22; padding: 10px; margin-top: 5px; border-left: 3px solid #d10d0d; }
+    </style>
+</head>
+<body>
+    <h1>🔧 Service Status Dashboard</h1>
+    <table class="status-table">
+        <tr><th>Service</th><th>Status</th><th>Details</th></tr>
+        <tr><td>AWS Connection</td><td class="status-ok" onclick="toggleDetails('aws-details')">✓ ONLINE</td><td>Connected to US-EAST1</td></tr>
+        <tr><td>Docker Engine</td><td class="status-warning" onclick="toggleDetails('docker-details')">⚠ WARNING</td><td>Click for details</td></tr>
+        <tr><td>Database</td><td class="status-ok" onclick="toggleDetails('db-details')">✓ ONLINE</td><td>PostgreSQL</td></tr>
+        <tr><td>Web Server</td><td class="status-ok" onclick="toggleDetails('web-details')">✓ ONLINE</td><td>Apache</td></tr>
+        <tr><td>New function</td><td class="status-error" onclick="toggleDetails('newfunc-details')">✗ OFFLINE</td><td>Click for details</td></tr>
+    </table>
+    <div class="details_ok" id="aws-details">
+        <strong>AWS systemd Log:</strong><br>
+        <code>
+        Info: Connected to AWS US-EAST1 region successfully.<br>       
+        No issues detected.<br>
+        Last checked: 2024-06-15 10:23:45
+        </code>
+    </div>
+    <div class="details_ok" id="db-details">
+        <strong>Database Status:</strong><br>
+        <code>
+        Info: PostgreSQL database is running smoothly.<br>
+        Uptime: 72 hours<br>
+        Last backup: 2024-06-15 02:00:00
+        </code>
+    </div>
+    <div class="details_ok" id="web-details">
+        <strong>Web Server Status:</strong><br>
+        <code>
+        Info: Apache web server is operational.<br>
+        Uptime: 120 hours<br>
+        Active connections: 45
+        </code>
+    </div>
+    <div class="details" id="docker-details">
+        <strong>Docker Error Log:</strong><br>
+        <code>
+        Error: Failed to initialize storage driver<br>
+        Code: ERR_STORAGE_DECRYPT_FAIL<br>
+        Message: Could not decrypt mounted artifact<br>
+        Affected file: link_do_pliku_z_gita<br>
+        <br>
+        Decryption attempt:
+        Password provided in log: Bob_Majster123<br>
+        Key derivation: PBKDF2 (SHA-256)<br>
+        Salt (hex): 73616c745f313233<br>
+        Iterations: 100000<br>
+        Key size: 128 bits (16 bytes)<br>
+        Mode: AES-CBC<br>
+        IV (hex): 000102030405060708090a0b0c0d0e0f
+        </code>
+    </div>
+    <div class="details_down" id="newfunc-details">
+        <strong>[TEST] New Function Error Log:</strong><br>
+        <code>
+        Error: Function initialization failed<br>
+        Code: ERR_FUNC_INIT<br>
+        Message: Missing dependencies detected<br>
+        Recommended action: Review function setup and install required packages<br><br>
+        Error trace: wQgZxauX
+        </code>
+    </div>
+    <div class="hint" id="SJWtw3p%">💡 ..... + Me</div>
+    <script>
+        function toggleDetails(data) {
+            var d = document.getElementById(data || 'docker-details');
+            d.style.display = (d.style.display === 'none' || d.style.display === '') ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
