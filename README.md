@@ -8,3 +8,6 @@ Test
 ## SSH
     Keys should be encrypted using passphrase:
     ssh-keygen -t ed25519 -f /toor/.ssh/toor_key -N "HasloDoOdszyfrowania123"
+## FTP
+    User: ftpuser
+    Password: FtpUser123
