@@ -1,4 +1,9 @@
 # WorkInProgrezz
+<a href = "https://github.com/Nexti420/WorkInProgrezz/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo=Nexti420/WorkInProgrezz"/>
+</a>
+<img src="https://github-readme-stats.vercel.app/api/top-langs?username=Nexti420&show_icons=true&locale=en&layout=compact&theme=chartreuse-dark" alt="ovi" />
+
 ## Development Repository
 This repository contains development scripts and configurations.
 ## Usage
