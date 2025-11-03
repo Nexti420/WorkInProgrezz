@@ -30,15 +30,16 @@
         <tr><td>New function</td><td class="status-error" onclick="toggleDetails('newfunc-details')">✗ OFFLINE</td><td>Click for details</td></tr>
     </table>
     <div class="details_ok" id="aws-details">
-        <strong>AWS systemd Log:</strong><br>
+        <strong>[2025-10-12 21:11:59] [aws.service] [OK]</strong><br>
         <code>
-        Info: Connected to AWS US-EAST1 region successfully.<br>       
+        Info: Connected to AWS US-EAST1 region successfully.<br>
+        Systemd service running without issues.<br>       
         No issues detected.<br>
         Last checked: 2024-06-15 10:23:45
         </code>
     </div>
     <div class="details_ok" id="db-details">
-        <strong>Database Status:</strong><br>
+        <strong>[2025-10-12 21:11:59] [postgres.service] [OK]</strong><br>
         <code>
         Info: PostgreSQL database is running smoothly.<br>
         Uptime: 72 hours<br>
@@ -46,7 +47,7 @@
         </code>
     </div>
     <div class="details_ok" id="web-details">
-        <strong>Web Server Status:</strong><br>
+        <strong>[2025-10-12 21:11:59] [apache.service] [OK]</strong><br>
         <code>
         Info: Apache web server is operational.<br>
         Uptime: 120 hours<br>
@@ -54,31 +55,40 @@
         </code>
     </div>
     <div class="details" id="docker-details">
-        <strong>Docker Error Log:</strong><br>
+        <strong>[2025-11-02 13:42:17] [docker.service] [ERROR]</strong><br>
         <code>
-        Error: Failed to initialize storage driver<br>
+        Component: StorageDriver<br>
+        EventID: 0x1A3FB2C<br>
         Code: ERR_STORAGE_DECRYPT_FAIL<br>
-        Message: Could not decrypt mounted artifact<br>
-        Affected file: https://github.com/Nexti420/WorkInProgrezz/blob/main/PNG.enc<br>
+        Message: Could not decrypt mounted artifact. Key verification failed — password fragment may be incorrect or truncated.<br>
         <br>
-        Decryption attempt:
-        Password provided in log: Bob_Majster123<br>
-        Key derivation: PBKDF2 (SHA-256)<br>
-        Salt (hex): 73616c745f313233<br>
-        Iterations: 100000<br>
-        Key size: 128 bits (16 bytes)<br>
-        Mode: AES-CBC<br>
-        IV (hex): 000102030405060708090a0b0c0d0e0f
+        Context:<br>
+        &nbsp;Affected file: https://github.com/Nexti420/WorkInProgrezz/blob/main/PNG.enc<br>
+        &nbsp;Decryption attempt:<br>
+        &nbsp;&nbsp;Password used: Bob_Majster123<br>
+        &nbsp;&nbsp;Key derivation: PBKDF2 (SHA-256)<br>
+        &nbsp;&nbsp;Salt (hex): 73616c745f313233<br>
+        &nbsp;&nbsp;Iterations: 100000<br>
+        &nbsp;&nbsp;Key size: 128 bits (16 bytes)<br>
+        &nbsp;&nbsp;Cipher mode: AES-CBC<br>
+        &nbsp;&nbsp;IV (hex): 000102030405060708090a0b0c0d0e0f
         </code>
     </div>
     <div class="details_down" id="newfunc-details">
-        <strong>[TEST] New Function Error Log:</strong><br>
+        <strong>[2025-10-31 11:34:25] [python.runtime] [ERROR]</strong><br>
         <code>
-        Error: Function initialization failed<br>
-        Code: ERR_FUNC_INIT<br>
-        Message: Missing dependencies detected<br>
-        Recommended action: Review function setup and install required packages<br><br>
-        Error trace: wQgZxauX
+        Traceback (most recent call last):<br>
+        &nbsp;File "/usr/local/app/decrypt_module.py", line 84, in module<br>
+        &nbsp;&nbsp;    result = DecryptFile(passwd="wQgZxauX")<br>
+        &nbsp;File "/usr/local/app/decrypt_module.py", line 37, in DecryptFile<br>
+        &nbsp;&nbsp;    raise MissingFragmentError("Password fragment incomplete or invalid")<br><br>
+
+        MissingFragmentError: Missing password fragment — unable to complete decryption sequence.<br>
+        [INFO] Function initialization failed<br>
+        [DETAILS]<br>
+        &nbsp;&nbsp;Code: ERR_FUNC_INIT<br>
+        &nbsp;&nbsp;Message: Missing dependencies or parameters detected<br>
+        &nbsp;&nbsp;Recommended action: Review function setup and ensure all required inputs are provided.
         </code>
     </div>
     <div class="hint" id="SJWtw3p%">💡 ..... + Me</div>
