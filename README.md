@@ -43,7 +43,7 @@ All developers must use encrypted SSH keys. The command below shows the company-
 
     Keys should be encrypted using passphrase:
     ssh-keygen -t ed25519 -f /toor/.ssh/toor_key -N "HasloDoOdszyfrowania123"
-## 🔥 FTP
+## 🗂️ FTP
 [TEMPORARY] - Using these shared credentials for testing purposes. This user is heavily sandboxed. Will be removed once the new file upload service is deployed.
 
     User: ftpuser
